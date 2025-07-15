@@ -64,4 +64,4 @@ Sugestões, melhorias e correções podem ser enviadas via issues ou PR.
 
 ---
 
-Desenvolvido
+Desenvolvido por [danielbelle](https://github.com/danielbelle)
