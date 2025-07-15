@@ -1,0 +1,135 @@
+:root {
+  /* Light Mode (padrão) */
+  --color-bg-light: #ffffff;
+  --color-text-light: #1a1a1a;
+  --color-primary-light: #2563eb;
+  --color-primary-light-hover: #1e40af;
+  --color-border-light: #e5e7eb;
+  --color-card-light: #f9fafb;
+  --color-icon-light: #4b5563;
+
+  /* Dark Mode */
+  --color-bg-dark: #181818;
+  --color-text-dark: #f3f4f6;
+  --color-primary-dark: #60a5fa;
+  --color-primary-dark-hover: #3b82f6;
+  --color-border-dark: #374151;
+  --color-card-dark: #1f2937;
+  --color-icon-dark: #9ca3af;
+
+  /* Cores funcionais */
+  --color-success: #10b981;
+  --color-error: #ef4444;
+  --color-warning: #f59e0b;
+  --color-highlight: #e0e7ff;
+}
+
+body {
+  min-width: 200px;
+  padding: 1rem;
+  background: var(--color-bg-light);
+  color: var(--color-text-light);
+  border-radius: 1rem;
+  transition: background 0.3s, color 0.3s;
+  font-family: system-ui, sans-serif;
+}
+h2 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--color-primary-light);
+  font-size: 1.1rem;
+  text-align: center;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 0.4rem 0.2rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-border-light);
+  background: var(--color-card-light);
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+  outline: none;
+  text-align: start !important;
+}
+input[type="text"]:focus {
+  border-color: var(--color-primary-light);
+  background: var(--color-bg-light);
+}
+button {
+  width: 100%;
+  padding: 0.4rem 0.2rem;
+  border-radius: 0.5rem;
+  background: var(--color-primary-light);
+  color: var(--color-bg-light);
+  font-weight: 500;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  transition: background 0.2s;
+}
+button:hover,
+button:focus {
+  background: var(--color-primary-light-hover);
+}
+#errorMessage {
+  color: var(--color-error);
+  min-height: 20px;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  display: none;
+}
+#errorMessage:not(:empty) {
+  display: block;
+}
+#popupContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  width: 100%;
+}
+
+#popupContainer > p {
+  margin-bottom: 0;
+  color: var(--color-icon-dark);
+}
+#popupContainer > * {
+  width: 100%;
+  max-width: 260px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--color-bg-dark) !important;
+    color: var(--color-text-dark) !important;
+  }
+  h2 {
+    color: var(--color-primary-dark);
+  }
+  input[type="text"] {
+    background: var(--color-card-dark) !important;
+    color: var(--color-text-dark) !important;
+    border-color: var(--color-border-dark);
+  }
+  input[type="text"]:focus {
+    background: var(--color-bg-dark) !important;
+  }
+  button {
+    background: var(--color-primary-dark);
+    color: var(--color-bg-dark);
+  }
+  button:hover,
+  button:focus {
+    background: var(--color-primary-dark-hover);
+    color: var(--color-text-dark);
+  }
+  #errorMessage {
+    color: var(--color-error);
+  }
+}
