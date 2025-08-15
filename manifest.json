@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Pesquisar no DeepSeek",
-  "version": "1.0",
+  "version": "1.2",
   "description": "Realiza pesquisas no DeepSeek diretamente do Chrome",
   "action": {
     "default_popup": "popup.html",
@@ -22,5 +22,14 @@
   "host_permissions": ["https://chat.deepseek.com/*"],
   "background": {
     "service_worker": "background.js"
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "Command+Shift+F"
+      },
+      "description": "Abrir a extensão"
+    }
   }
 }

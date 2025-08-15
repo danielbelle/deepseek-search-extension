@@ -1,7 +1,9 @@
+let searchQuery = document.getElementById("searchQuery");
+
 function enviarBusca() {
   document.getElementById("errorMessage").textContent = ""; // Limpa mensagens anteriores
 
-  const text = document.getElementById("searchQuery").value.slice(0, 500);
+  const text = searchQuery.value.slice(0, 500);
 
   chrome.runtime.sendMessage(
     {
@@ -25,8 +27,12 @@ function enviarBusca() {
 
 document.getElementById("searchButton").addEventListener("click", enviarBusca);
 
-document.getElementById("searchQuery").addEventListener("keydown", (e) => {
+searchQuery.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     enviarBusca();
   }
 });
+
+searchQuery.focus();
+
+searchQuery.addEventListener("input", () => {});
